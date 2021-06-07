@@ -119,6 +119,20 @@ public class IssueHistory extends BaseEntity{
 	public void setAssignee(User assignee) {
 		this.assignee = assignee;
 	}
+
+
+
+	public Issue getIssue() {
+		return issue;
+	}
+
+	
+	
+
+
+	public void setIssue(Issue issue) {
+		this.issue = issue;
+	}
     
     
     
