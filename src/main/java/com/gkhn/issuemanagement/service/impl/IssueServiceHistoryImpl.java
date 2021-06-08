@@ -28,7 +28,7 @@ public class IssueServiceHistoryImpl implements IssueHistoryService {
     }
 
     @Override
-    public IssueHistory getById(BigInteger id) {
+    public IssueHistory getById(Long id) {
         return issueHistoryRepository.getById(id);
     }
 

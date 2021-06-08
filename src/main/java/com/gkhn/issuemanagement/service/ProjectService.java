@@ -1,5 +1,6 @@
 package com.gkhn.issuemanagement.service;
 
+import com.gkhn.issuemanagement.dto.ProjectDto;
 import com.gkhn.issuemanagement.entity.Issue;
 import com.gkhn.issuemanagement.entity.Project;
 import com.gkhn.issuemanagement.entity.User;
@@ -11,7 +12,7 @@ import java.util.List;
 
 public interface ProjectService {
     Project save(Project project);
-    Project getById(BigInteger id);
+    ProjectDto getById(Long id);
 
     List<Project> getByProjectCode(String projectCode);
 

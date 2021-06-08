@@ -10,7 +10,7 @@ import java.math.BigInteger;
 
 public interface IssueService {
     IssueDto save(IssueDto issueDto);
-    IssueDto getById(BigInteger id);
+    IssueDto getById(Long id);
     TPage<IssueDto> getAllPageable(Pageable pageable);
     Boolean delete(IssueDto issue);
 

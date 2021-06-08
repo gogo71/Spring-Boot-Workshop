@@ -38,7 +38,7 @@ public class IssueServiceImpl implements IssueService {
     }
 
     @Override
-    public IssueDto getById(BigInteger id) {
+    public IssueDto getById(Long id) {
         return null;
     }
 

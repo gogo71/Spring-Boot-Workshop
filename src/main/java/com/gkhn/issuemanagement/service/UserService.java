@@ -9,7 +9,7 @@ import java.math.BigInteger;
 
 public interface UserService {
     User save(User user);
-    User getById(BigInteger id);
+    User getById(Long id);
     Page<User> getAllPageable(Pageable pageable);
 
 

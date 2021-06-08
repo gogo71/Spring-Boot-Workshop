@@ -10,7 +10,7 @@ import java.math.BigInteger;
 
 public interface IssueHistoryService {
     IssueHistory save(IssueHistory issueHistory);
-    IssueHistory getById(BigInteger id);
+    IssueHistory getById(Long id);
     Page<IssueHistory> getAllPageable(Pageable pageable);
     Boolean delete(IssueHistory issueHistory);
 

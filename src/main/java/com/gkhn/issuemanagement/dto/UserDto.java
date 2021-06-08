@@ -3,12 +3,12 @@ package com.gkhn.issuemanagement.dto;
 import java.math.BigInteger;
 
 public class UserDto {
-    private BigInteger id;
+    private Long id;
     private String nameSurname;
-	public BigInteger getId() {
+	public Long getId() {
 		return id;
 	}
-	public void setId(BigInteger id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 	public String getNameSurname() {

@@ -3,13 +3,13 @@ package com.gkhn.issuemanagement.dto;
 import java.math.BigInteger;
 
 public class ProjectDto {
-    private BigInteger id;
+    private Long id;
     private String projectName;
     private String projectCode;
-	public BigInteger getId() {
+	public Long getId() {
 		return id;
 	}
-	public void setId(BigInteger id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 	public String getProjectName() {

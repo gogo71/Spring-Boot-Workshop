@@ -8,17 +8,17 @@ import java.util.Date;
 
 @Data
 public class IssueDto {
-    private BigInteger id;
+    private Long id;
     private String description;
     private String details;
     private Date date;
     private IssueStatus issueStatus;
     private UserDto assignee;
     private ProjectDto project;
-	public BigInteger getId() {
+	public Long getId() {
 		return id;
 	}
-	public void setId(BigInteger id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 	public String getDescription() {

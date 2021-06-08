@@ -17,7 +17,7 @@ import java.util.Date;
 public class Issue extends BaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private BigInteger id;
+    private Long id;
     @Column(name="DESCRIPTION",length = 400)
     private String description;
 
@@ -40,11 +40,11 @@ public class Issue extends BaseEntity {
     @ManyToOne(optional = true, fetch = FetchType.LAZY)
     private Project project;
 
-	public BigInteger getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(BigInteger id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 

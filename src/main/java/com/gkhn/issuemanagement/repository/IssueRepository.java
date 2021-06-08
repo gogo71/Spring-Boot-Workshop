@@ -5,6 +5,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.math.BigInteger;
 
-public interface IssueRepository extends JpaRepository<Issue, BigInteger> {
+public interface IssueRepository extends JpaRepository<Issue, Long> {
 
 }
