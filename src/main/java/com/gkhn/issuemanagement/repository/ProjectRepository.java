@@ -12,8 +12,10 @@ import com.gkhn.issuemanagement.entity.Project;
 public interface ProjectRepository extends JpaRepository<Project, Long> {
 	Project save(Project proje);
     Project getByProjectCode(String projectCode);
+      Project getByProjectCodeAndIdNot(String projectCode, Long id);
 //    List<Project> getAllByProjectCodeAndIdNotNull(String projectCode);
 //    List<Project> getAllByProjectCodeAnAndProjectNameContains(String projectCode, String name);
     Page<Project> findAll(Pageable pageable);
     List<Project> findAll(Sort sort);
+     void deleteById(Long id);
 }

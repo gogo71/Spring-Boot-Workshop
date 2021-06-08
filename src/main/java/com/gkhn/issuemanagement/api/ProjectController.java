@@ -5,6 +5,7 @@ import javax.validation.Valid;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -32,20 +33,24 @@ public class ProjectController {
 		ProjectDto projectDto = projectServiceImpl.getById(id);
 		return ResponseEntity.ok(projectDto);
 	}
-	
+
 	@PostMapping()
 	public ResponseEntity<ProjectDto> createProject(@Valid @RequestBody ProjectDto project) {
 		return ResponseEntity.ok(projectServiceImpl.save(project));
 	}
-	
-	
+
 //	@RequestMapping(path = "/update",method = RequestMethod.PUT)
 	@PutMapping("/{id}")
-	public ResponseEntity<ProjectDto> updateProject(@PathVariable("id") Long id, @Valid @RequestBody ProjectDto project){
-		//SOLID'E TERS SAVE METODU İLE UPDATE YAPARSAK. TEK BİR FONKSİYONA HEM SAVE HEM UPDATE YAPMAMALI
-		return ResponseEntity.ok(projectServiceImpl.update(id,project));
+	public ResponseEntity<ProjectDto> updateProject(@PathVariable("id") Long id,
+			@Valid @RequestBody ProjectDto project) {
+		// SOLID'E TERS SAVE METODU İLE UPDATE YAPARSAK. TEK BİR FONKSİYONA HEM SAVE HEM
+		// UPDATE YAPMAMALI
+		return ResponseEntity.ok(projectServiceImpl.update(id, project));
 	}
-	
-	
-	
+
+	@DeleteMapping("/{id}")
+	public ResponseEntity<Boolean> delete(@PathVariable(value = "id") Long id) {
+		return ResponseEntity.ok(projectServiceImpl.delete(id));
+	}
+
 }
