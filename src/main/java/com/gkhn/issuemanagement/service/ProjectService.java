@@ -1,25 +1,29 @@
 package com.gkhn.issuemanagement.service;
 
-import com.gkhn.issuemanagement.dto.ProjectDto;
-import com.gkhn.issuemanagement.entity.Issue;
-import com.gkhn.issuemanagement.entity.Project;
-import com.gkhn.issuemanagement.entity.User;
+import java.util.List;
+
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
-import java.math.BigInteger;
-import java.util.List;
+import com.gkhn.issuemanagement.dto.ProjectDto;
+import com.gkhn.issuemanagement.util.TPage;
 
 public interface ProjectService {
-    Project save(Project project);
+	
+    ProjectDto save(ProjectDto project);
+    
     ProjectDto getById(Long id);
 
-    List<Project> getByProjectCode(String projectCode);
+    ProjectDto getByProjectCode(String projectCode);
 
-    List<Project> getByProjectCodeContains(String projectCode);
+    List<ProjectDto> getByProjectCodeContains(String projectCode);
 
-    Page<Project> getAllPageable(Pageable pageable);
+    TPage<ProjectDto> getAllPageable(Pageable pageable);
 
-    Boolean delete(Project project);
+    Boolean delete(ProjectDto project);
+    
+    ProjectDto update(Long id, ProjectDto project);
+    
+    
 
 }

@@ -1,10 +1,10 @@
 package com.gkhn.issuemanagement.dto;
 
-import java.math.BigInteger;
-
 public class ProjectDto {
     private Long id;
+    @javax.validation.constraints.NotNull
     private String projectName;
+    @javax.validation.constraints.NotNull
     private String projectCode;
 	public Long getId() {
 		return id;

@@ -10,7 +10,8 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import com.gkhn.issuemanagement.entity.Project;
 //@Repository Autowired için gerekli. Ancak JPARepository Spring 2.0 dan sonra gerek kalmadı.
 public interface ProjectRepository extends JpaRepository<Project, Long> {
-    List<Project> getAllByProjectCode(String projectCode);
+	Project save(Project proje);
+    Project getByProjectCode(String projectCode);
 //    List<Project> getAllByProjectCodeAndIdNotNull(String projectCode);
 //    List<Project> getAllByProjectCodeAnAndProjectNameContains(String projectCode, String name);
     Page<Project> findAll(Pageable pageable);
