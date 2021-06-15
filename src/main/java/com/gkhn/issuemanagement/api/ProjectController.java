@@ -2,6 +2,8 @@ package com.gkhn.issuemanagement.api;
 
 import javax.validation.Valid;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -21,8 +23,11 @@ import io.swagger.annotations.ApiOperation;
 
 @RestController
 @RequestMapping(path = ApiPaths.ProjectCtrl.CTRL)
-@Api(value="Project APIs")
+@Api(value="Project APIs", description = "Project APIs")
 public class ProjectController {
+	
+    private static final Logger logger = LoggerFactory.getLogger(ProjectController.class);
+
 
 	private final ProjectServiceImpl projectServiceImpl;
 
@@ -33,6 +38,8 @@ public class ProjectController {
 	@GetMapping("/{id}")
 	@ApiOperation( value="GetBy Id Operation", response = ProjectDto.class)
 	public ResponseEntity<ProjectDto> getById(@PathVariable("id") Long id) {
+		logger.info("ProjectController-> GetById");
+		logger.debug("ProjectController-> GetById ->Param : "+id);
 		ProjectDto projectDto = projectServiceImpl.getById(id);
 		return ResponseEntity.ok(projectDto);
 	}
