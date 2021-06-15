@@ -24,7 +24,7 @@ public class IssueHistory extends BaseEntity{
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 	
-	@JoinColumn(name="ISSUE_ID")
+	@JoinColumn(name="ISSUE_ID",referencedColumnName = "ID")
 	@ManyToOne(optional = true, fetch = FetchType.LAZY)
 	private Issue issue;
 
@@ -44,7 +44,7 @@ public class IssueHistory extends BaseEntity{
 
 
 
-    @JoinColumn(name="ASSIGNEE_USER_ID")
+    @JoinColumn(name="ASSIGNEE_USER_ID",referencedColumnName = "ID")
     @ManyToOne(optional = true, fetch = FetchType.LAZY)
     private User assignee;
 

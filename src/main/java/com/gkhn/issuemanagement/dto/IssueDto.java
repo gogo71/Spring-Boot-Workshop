@@ -1,10 +1,10 @@
 package com.gkhn.issuemanagement.dto;
 
-import com.gkhn.issuemanagement.entity.IssueStatus;
-import lombok.Data;
-
-import java.math.BigInteger;
 import java.util.Date;
+
+import com.gkhn.issuemanagement.entity.IssueStatus;
+
+import lombok.Data;
 
 @Data
 public class IssueDto {
