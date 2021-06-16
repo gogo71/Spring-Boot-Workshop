@@ -4,6 +4,7 @@ import javax.validation.Valid;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,6 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.gkhn.issuemanagement.dto.ProjectDto;
 import com.gkhn.issuemanagement.service.impl.ProjectServiceImpl;
 import com.gkhn.issuemanagement.util.ApiPaths;
+import com.gkhn.issuemanagement.util.TPage;
 
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -34,7 +36,12 @@ public class ProjectController {
 	public ProjectController(ProjectServiceImpl projectServiceImpl) {
 		this.projectServiceImpl = projectServiceImpl;
 	}
-
+	@GetMapping("/pagination")
+	@ApiOperation( value="GetBy Pagination Operation", response = ProjectDto.class)
+	public ResponseEntity<TPage<ProjectDto>> getAllByPagination(Pageable pageable) {
+		TPage<ProjectDto> data= projectServiceImpl.getAllPageable(pageable);
+		return ResponseEntity.ok(data);
+	}
 	@GetMapping("/{id}")
 	@ApiOperation( value="GetBy Id Operation", response = ProjectDto.class)
 	public ResponseEntity<ProjectDto> getById(@PathVariable("id") Long id) {
